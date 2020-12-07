@@ -1,0 +1,85 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    font-family: 'Nunito';
+}
+.section-box{
+    margin-top: 20px;
+   text-align: center;
+}
+
+.box-container{
+    width: 100%;
+    display: flex;
+    justify-content:center ;
+    flex-wrap: wrap;
+}
+.box-post{
+    position: relative;
+    width: 40%;
+    min-height: 50px;
+    height: 150px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    margin: 16px;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+    top: 50px;
+    overflow: hidden;
+}
+.box-title{
+    width: 90%;
+    height: 38px;
+    margin: 0 auto 15px;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 700;
+    color: #222;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.post-date{
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    font-size: 10px;
+    margin: 5px;
+}
+.box-description{
+    margin-bottom: 30px;
+    max-width: 90%;
+    height: 65px;
+    margin: 0 auto 15px;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+    color: #222;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+.order-by-date{
+    width: 50px;
+    margin-top: 50px;
+    background-color: #fff;
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.order-by-date option{
+    font-size: 20px;
+    font-weight: 700;
+}
