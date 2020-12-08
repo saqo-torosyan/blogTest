@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Http;
 
+
 class MainController extends Controller
 {
-    public $url="https://sq1-api-test.herokuapp.com/posts";
-
+   
     /**
      * Show the application dashboard.
      *
@@ -17,13 +17,10 @@ class MainController extends Controller
      */
     public function index(Request $request, $publication_date = 'desc')
     {
-        $posts = Post::orderBY('publication_date', $publication_date)->paginate(6);
-        $response = Http::send("GET", $this->url);
+        $posts = Post::whereNotNull('user_id')->orderBY('publication_date', $publication_date)->paginate(6);
 
-
-        $data = json_decode($response->body());
-        $api_posts = $data->data;
-
+        $api_posts = Post::whereNull('user_id')->orderBY('publication_date', $publication_date)->get();
+      
         return view('main',['posts' => $posts,'api_posts' => $api_posts, 'publication_date' => $publication_date]);
     }
     
